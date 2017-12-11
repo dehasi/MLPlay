@@ -1,6 +1,7 @@
 package me.perceptron;
 
 import com.google.common.base.Preconditions;
+import kotlin.PreconditionsKt;
 
 import java.util.Arrays;
 
@@ -11,6 +12,7 @@ public class Perceptron {
     private double[] w;
 
     public Perceptron(double[] w) {
+        Preconditions.checkNotNull(w);
         this.w = Arrays.copyOf(w, w.length);
     }
 
@@ -18,6 +20,9 @@ public class Perceptron {
         return Arrays.copyOf(w, w.length);
     }
 
+    public double getBias() {
+        return w[0];
+    }
     public int activate(double[] x) {
         Preconditions.checkState(w.length == x.length, "weight and input lengths should be equal.");
         return scalar(w, x) > 0 ? 1 : 0;
