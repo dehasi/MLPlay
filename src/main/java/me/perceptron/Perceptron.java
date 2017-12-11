@@ -8,25 +8,25 @@ import java.util.Arrays;
  * Simple representation of perceptron.
  */
 public class Perceptron {
-    private double[] w;
+    private double[] weights;
 
-    public Perceptron(double[] w) {
-        Preconditions.checkNotNull(w);
-        this.w = Arrays.copyOf(w, w.length);
+    public Perceptron(double[] weights) {
+        Preconditions.checkNotNull(weights);
+        this.weights = Arrays.copyOf(weights, weights.length);
     }
 
-    public double[] getW() {
-        return Arrays.copyOf(w, w.length);
+    public double[] getWeights() {
+        return Arrays.copyOf(weights, weights.length);
     }
 
     public double getBias() {
-        return w[0];
+        return weights[0];
     }
 
     public int activate(double[] x) {
         Preconditions.checkNotNull(x);
-        Preconditions.checkState(w.length == x.length, "weight and input lengths should be equal.");
-        return scalar(w, x) > 0 ? 1 : 0;
+        Preconditions.checkState(weights.length == x.length, "weight and input lengths should be equal.");
+        return scalar(weights, x) > 0 ? 1 : 0;
     }
 
     private double scalar(double[] v1, double[] v2) {

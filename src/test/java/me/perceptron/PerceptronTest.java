@@ -13,7 +13,7 @@ public class PerceptronTest {
     public void getW_returnsValidWeights() {
         double w[] = new double[]{1, 2, 3};
         Perceptron p = new Perceptron(w);
-        assertArrayEquals(p.getW(), w, 0.01);
+        assertArrayEquals(p.getWeights(), w, 0.01);
     }
 
     @Test
