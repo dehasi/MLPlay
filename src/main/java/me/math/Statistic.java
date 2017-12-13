@@ -17,8 +17,7 @@ public final class Statistic {
 
     public static double dispersion(final double[] x) {
         double m = mean(x);
-        double n = x.length;
-        double d = 0;
+
         return dispersion(x, m);
     }
 
