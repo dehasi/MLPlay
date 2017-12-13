@@ -1,4 +1,4 @@
-package me.perceptron;
+package me.nn.perceptron;
 
 import com.google.common.base.Preconditions;
 

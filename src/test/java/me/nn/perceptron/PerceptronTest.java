@@ -1,4 +1,4 @@
-package me.perceptron;
+package me.nn.perceptron;
 
 import org.junit.Test;
 
