@@ -6,9 +6,9 @@ class MatrixInvertTest extends Specification {
     def matrix1d = [[1]] as double[][]
     def matrix2d = [[1, 2],
                     [3, 4]] as double[][]
-    def matrix3d = [[1, 2, 3],
-                    [4, 5, 6],
-                    [7, 8, 9]] as double[][]
+    def matrix3d = [[7, -3, -3],
+                    [-1, 1, 0],
+                    [-1, 0, 1]] as double[][]
 
     def matrixNonInvertable = [[1, -1],
                                [2, -2]] as double[][]
