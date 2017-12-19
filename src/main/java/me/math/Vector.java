@@ -17,7 +17,7 @@ public final class Vector {
         return x;
     }
 
-    public static double[] logarithm(double[] vector, int col) {
+    public static double[] logarithm(double[] vector) {
         return applyToVector(vector, Math::log);
     }
 
@@ -29,12 +29,6 @@ public final class Vector {
         return result;
     }
 
-    public static void printVector(final double[] v) {
-        for (double aV : v) {
-            System.out.printf("%.2f\t", aV);
-        }
-        System.out.println("");
-    }
     private Vector() {
     }
 }
