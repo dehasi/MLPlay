@@ -97,7 +97,7 @@ public final class Matrix {
         double[] y = new double[n];
         for (int j = 0; j < n; j++)
             for (int i = 0; i < m; i++)
-                y[j] += matrix[i][j] * x[i];
+                y[j] += x[i] * matrix[i][j];
         return y;
     }
 
