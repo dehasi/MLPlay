@@ -137,6 +137,7 @@ public final class Matrix {
             int rs = p.first;
             int fnf = p.second;
             if (rs == 0) {
+                //TODO: make only one return point
                 return result;
             }
             if (fnf != i) {
