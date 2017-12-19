@@ -5,7 +5,7 @@ public final class MatrixMultiplication {
     public static double[] multiply(double[][] matrix, double[] x) {
         int m = matrix.length;
         int n = matrix[0].length;
-        if (x.length != n) throw new RuntimeException("Illegal matrix dimensions.");
+        if (x.length != n) throw new IllegalArgumentException("Illegal matrix dimensions.");
         double[] y = new double[m];
         for (int i = 0; i < m; i++)
             for (int j = 0; j < n; j++)
@@ -17,7 +17,7 @@ public final class MatrixMultiplication {
     public static double[] multiply(double[] x, double[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
-        if (x.length != m) throw new RuntimeException("Illegal matrix dimensions.");
+        if (x.length != m) throw new IllegalArgumentException("Illegal matrix dimensions.");
         double[] y = new double[n];
         for (int j = 0; j < n; j++)
             for (int i = 0; i < m; i++)
@@ -31,7 +31,7 @@ public final class MatrixMultiplication {
         int nA = A[0].length;
         int mB = B.length;
         int nB = B[0].length;
-        if (nA != mB) throw new RuntimeException("Illegal matrix dimensions.");
+        if (nA != mB) throw new IllegalArgumentException("Illegal matrix dimensions.");
         double[][] C = new double[mA][nB];
         for (int i = 0; i < mA; i++)
             for (int j = 0; j < nB; j++)
