@@ -33,14 +33,11 @@ public final class Statistic {
     }
 
     public static double[] normalize(final double[] vector) {
-        double[] x = new double[vector.length];
         double m = mean(vector);
         double d = dispersion(vector, m);
 
-        for (int i = 0; i < x.length; i++) {
-            x[i] = (vector[i] - m) / d;
-        }
-        return x;
+
+        return Vector.applyToVector(vector, v-> ((v - m) / d));
     }
 
     private Statistic() {
