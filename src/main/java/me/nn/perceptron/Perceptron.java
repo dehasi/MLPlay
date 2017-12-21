@@ -3,6 +3,7 @@ package me.nn.perceptron;
 import com.google.common.base.Preconditions;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * Simple representation of perceptron.
@@ -11,7 +12,7 @@ public class Perceptron {
     private double[] weights;
 
     public Perceptron(double[] weights) {
-        Preconditions.checkNotNull(weights);
+        Objects.requireNonNull(weights);
         this.weights = Arrays.copyOf(weights, weights.length);
     }
 
@@ -24,7 +25,7 @@ public class Perceptron {
     }
 
     public int activate(double[] x) {
-        Preconditions.checkNotNull(x);
+        Objects.requireNonNull(x);
         Preconditions.checkState(weights.length == x.length, "weight and input lengths should be equal.");
         return scalar(weights, x) > 0 ? 1 : 0;
     }
