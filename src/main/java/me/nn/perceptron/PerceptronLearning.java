@@ -7,21 +7,22 @@ import me.math.Vector;
  * Perceptron learning algorithm.
  */
 public class PerceptronLearning {
-    public double[] learn(double[][] examples, double[] responses) {
+    public double[] learn(double[][] examples, int[] responses) {
         Preconditions.checkState(examples.length == responses.length, "Amount of examples and answers should be equal");
         double[] w = new double[examples.length];
         boolean perfect = false;
         int watchDog = 1000;
         while (!perfect) {
             if (watchDog < 0 ) {
-                break;
+                throw new IllegalStateException("It is not possible ot find solution");
             }
             --watchDog;
 
             perfect = true;
-            for (double[] e : examples) {
-                int predicted = predict(e);
-                if (predicted != target(e)) {
+            for (int i = 0; i < examples.length; i++) {
+                double[] e =  examples[i];
+                int predicted = predict(e,w);
+                if (predicted != responses[i]) {
                     perfect = false;
                     if (predicted == 0) {
                         w = Vector.applyVectors(w, e, (x1, x2) -> x1 + x2);
@@ -34,11 +35,7 @@ public class PerceptronLearning {
         return w;
     }
 
-    private int predict(double[] e) {
-        return 0;
-    }
-
-    private int target(double[] e) {
-        return 0;
+    private int predict(double[] e, double[] w) {
+        return Vector.multiplyScalar(e, w) > 0 ? 1 : 0;
     }
 }
