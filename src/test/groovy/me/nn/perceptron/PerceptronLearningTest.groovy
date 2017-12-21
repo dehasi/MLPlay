@@ -26,6 +26,6 @@ class PerceptronLearningTest extends Specification {
         def weights = learning.learn(examples, responses)
 
         then:
-        weights == [1.0, 1.6 -3.1000000000000005] as double[]
+        weights == [1.0, 1.6, -3.1000000000000005] as double[]
     }
 }
